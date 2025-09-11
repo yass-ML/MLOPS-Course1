@@ -1,5 +1,5 @@
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
-
+import torch
 from fastapi import FastAPI, APIRouter
 import joblib
 
