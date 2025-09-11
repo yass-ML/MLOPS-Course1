@@ -1,11 +1,11 @@
 import requests
 
 #BASE_URL = "http://localhost:5045" # URL used for local testing
-BASE_URL = "http://4.210.225.87:5045" # URL used for the Ubuntu VM deployment
+BASE_URL = "http://20.229.168.115:5045" # URL used for the Ubuntu VM deployment
 TIMEOUT = 5  # seconds
 
 def test_predict_get():
-    response = requests.get(f"{BASE_URL}/predict", timeout=TIMEOUT)
+    response = requests.get(f"{BASE_URL}/house/predict", timeout=TIMEOUT)
     assert response.status_code == 200
     data = response.json()
     assert "y_pred" in data
@@ -18,7 +18,7 @@ def test_predict_post():
         "nb_rooms": 3,
         "garden": 1
     }
-    response = requests.post(f"{BASE_URL}/predict", json=payload, timeout=TIMEOUT)
+    response = requests.post(f"{BASE_URL}/house/predict", json=payload, timeout=TIMEOUT)
     assert response.status_code == 200
     data = response.json()
     assert "y_pred" in data
