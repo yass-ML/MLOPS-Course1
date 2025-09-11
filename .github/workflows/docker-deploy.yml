@@ -52,11 +52,11 @@ jobs:
           echo "Changing to deployment directory..."
           cd /home/ubuntu/yb
           echo "Pulling latest Docker image..."
-          docker pull ${{ secrets.DOCKER_USERNAME }}/mlops-miniproject-fastapi-ml:latest
+          sudo docker pull ${{ secrets.DOCKER_USERNAME }}/mlops-miniproject-fastapi-ml:latest
           echo "Stopping existing container (if any)..."
-          docker stop mlops-miniproject-fastapi-ml || true
+          sudo docker stop mlops-miniproject-fastapi-ml || true
           echo "Removing existing container (if any)..."
-          docker rm mlops-miniproject-fastapi-ml || true
+          sudo docker rm mlops-miniproject-fastapi-ml || true
           echo "Starting new container..."
-          docker run -d --name mlops-miniproject-fastapi-ml -p 5045:8000 ${{ secrets.DOCKER_USERNAME }}/mlops-miniproject-fastapi-ml:latest
+          sudo docker run -d --name mlops-miniproject-fastapi-ml -p 5045:8000 ${{ secrets.DOCKER_USERNAME }}/mlops-miniproject-fastapi-ml:latest
           echo "Deployment complete."
