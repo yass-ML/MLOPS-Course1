@@ -1,6 +1,7 @@
 import requests
 
-BASE_URL = "http://localhost:8000"
+#BASE_URL = "http://localhost:5045" # URL used for local testing
+BASE_URL = "http://4.210.225.87:5045" # URL used for the Ubuntu VM deployment
 TIMEOUT = 5  # seconds
 
 def test_predict_get():

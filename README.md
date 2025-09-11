@@ -7,3 +7,8 @@ run on Ubuntu VM with `python -m uvicorn web_server:app --reload --port 5045 --h
 
 after building the image with `docker build -t IMAGE_NAME .`, used `docker run -d --name CONTAINER_NAME -p 5045:8000 IMAGE_NAME` to run the containerized app
 
+
+## Step 4
+
+See docker-deploy.yml
+
