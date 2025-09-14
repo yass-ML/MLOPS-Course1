@@ -23,11 +23,11 @@ def predict_post(data: dict):
     return {"y_pred": float(prediction[0])}
 
 
-# NLP model using T5 (example: text summarization)
+# NLP model using T5
 nlp_router = APIRouter(prefix="/nlp")
 
 
-# Load tokenizer and model (t5-small for demo, switch to preferred T5 or BERT)
+# Load tokenizer and model
 tokenizer = AutoTokenizer.from_pretrained("t5-small")
 model = AutoModelForSeq2SeqLM.from_pretrained("t5-small")
 

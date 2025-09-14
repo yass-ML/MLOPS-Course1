@@ -5,12 +5,9 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 
-# 1) Copy and install deps first (better cache)
 COPY requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
 
-
-# 2) Copy source code
 COPY . /app
 
 EXPOSE 8000
